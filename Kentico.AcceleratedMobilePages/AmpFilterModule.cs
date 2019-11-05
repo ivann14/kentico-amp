@@ -3,6 +3,7 @@
 using CMS;
 using CMS.Base;
 using CMS.DataEngine;
+using CMS.EventLog;
 using CMS.OutputFilter;
 
 using Kentico.AcceleratedMobilePages;
@@ -37,6 +38,8 @@ namespace Kentico.AcceleratedMobilePages
 
             // Ensures that the output filter instance is created on every request
             RequestEvents.PostMapRequestHandler.Execute += PostMapRequestHandler_Execute;
+
+            EventLogProvider.LogEvent("I", "AMP Module init", "Module inited");
         }
 
 
